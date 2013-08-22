@@ -4,27 +4,36 @@ Cstress – A stress testing tool for servers using TCP connections.
 
 Cstress is a tool that allows to send data through n connections simultaneously in order to test how the destination server reacts.
 
-###·Modes:
+##·Modes:
 1. Manual mode (-m): Once the n connections are set, the specified quantity of data is sent through every connection at once.
+
 2. Iterative mode (-i): Once the n connections are set, k chunks of m bytes are sent through all of them simultaneously, (one chunk after another).
-3.Realistic mode (-r): It subjects the host to a simulation of n concurrent client/server communications during the specified period of time. (includes random connections/disconnections and sending of data in an unsynchronized way between clients.
+
+3. Realistic mode (-r): It subjects the host to a simulation of n concurrent client/server communications during the specified period of time. (includes random connections/disconnections and sending of data in an unsynchronized way between clients.
 
 Note: All the modes record the number of times a connection error happened and a server availability test before the end of the program execution.
 
 
-###Customizable Parameters: [mode]
+##Customizable Parameters: [mode]
 
 -c: "connections": Number of concurrent connections to be made.
+
 -a: "answer": Expected answer from the server.
+
 -b: ”bytes":  Number of bytes sent on every connection[-m] or every iteration[-i][-r]
+
 -k: "k_chunks": Number of chunks of bytes (iterations) sent on every connection[-m][-i]
+
 -t: "time": Duration in seconds of the simulation[-r]
+
 -d: "delimiter": delimiter (marks when the client has finished sending data)
+
 -z: "ifile": File-path (data to be sent, e.g. a jpg image.)
+
 -f: “force_simultaneity": With >1000 connections, forces to send bytes through all of them truly simultaneously (thus avoiding delays between them) (It can cause SIGSEGV depending on the configuration of your OS.
 
 
-###Usage Examples:
+##Usage Examples:
 
 1. ./main localhost 5008 -i -c 700 -b 5000 -k 15 -a "received" -d "**---//---**"
 
@@ -40,19 +49,20 @@ Summary: Connection to a server set in localhost, listening to port 5008. Mode: 
 Summary: Connection to a server set in localhost, listening to port 5008. Mode: realistic. 1000 concurrent connections. It sends chunks of 5000 bytes through every connection during a period of 300 seconds. (In an unsynchronized manner to do it a bit more realistic) Answer expected from server: received. Delimiter: **---//---**
 
 
-###Things that may be improved:
+##Things that may be improved:
 
 I know that a lot of things may be improved (this is basically a project born out of a need to do specifically this kind of testing to a server, as soon as possible.), but some of them are:
 
-*1.Code clarity: For instance separating some common functions in subroutines (e.g. host connection)
+1. Code clarity: For instance separating some common functions in subroutines (e.g. host connection)
 
-*2.Time measurement performance: Improve the time measurement of the clients/server communication.
+2. Time measurement performance: Improve the time measurement of the clients/server communication.
 
-*3.Reliability when spawning more than 1000 connections (threads): It may be a system-dependent issue, but the reliability of the program certainly decreases after breaking the 1000 connections barrier.
+3. Reliability when spawning more than 1000 connections (threads): It may be a system-dependent issue, but the reliability of the program certainly decreases after breaking the 1000 connections barrier.
 
 
 
-###·Build instructions:
+
+##·Build instructions:
 
 ####-Possible requisites:
 
