@@ -4,8 +4,7 @@ Cstress – A stress testing tool for servers using TCP connections.
 
 Cstress is a tool that allows to send data through n connections simultaneously in order to test how the destination server reacts.
 
-####·Modes:
-
+###·Modes:
 1. Manual mode (-m): Once the n connections are set, the specified quantity of data is sent through every connection at once.
 2. Iterative mode (-i): Once the n connections are set, k chunks of m bytes are sent through all of them simultaneously, (one chunk after another).
 3.Realistic mode (-r): It subjects the host to a simulation of n concurrent client/server communications during the specified period of time. (includes random connections/disconnections and sending of data in an unsynchronized way between clients.
@@ -13,8 +12,7 @@ Cstress is a tool that allows to send data through n connections simultaneously 
 Note: All the modes record the number of times a connection error happened and a server availability test before the end of the program execution.
 
 
-Customizable Parameters: [mode]
--------------------------------
+###Customizable Parameters: [mode]
 
 -c: "connections": Number of concurrent connections to be made.
 -a: "answer": Expected answer from the server.
@@ -26,8 +24,7 @@ Customizable Parameters: [mode]
 -f: “force_simultaneity": With >1000 connections, forces to send bytes through all of them truly simultaneously (thus avoiding delays between them) (It can cause SIGSEGV depending on the configuration of your OS.
 
 
-Usage Examples:
----------------
+###Usage Examples:
 
 1. ./main localhost 5008 -i -c 700 -b 5000 -k 15 -a "received" -d "**---//---**"
 
@@ -43,8 +40,7 @@ Summary: Connection to a server set in localhost, listening to port 5008. Mode: 
 Summary: Connection to a server set in localhost, listening to port 5008. Mode: realistic. 1000 concurrent connections. It sends chunks of 5000 bytes through every connection during a period of 300 seconds. (In an unsynchronized manner to do it a bit more realistic) Answer expected from server: received. Delimiter: **---//---**
 
 
-Things that may be improved:
-----------------------------
+###Things that may be improved:
 
 I know that a lot of things may be improved (this is basically a project born out of a need to do specifically this kind of testing to a server, as soon as possible.), but some of them are:
 
@@ -56,10 +52,9 @@ I know that a lot of things may be improved (this is basically a project born ou
 
 
 
-·Build instructions:
---------------------
+###·Build instructions:
 
--Possible requisites:
+####-Possible requisites:
 
 ulimit -s 3500	            #decrease stack size
 ulimit -n 13000	#increase num of open files allowed
@@ -71,14 +66,13 @@ echo 5000 > /proc/sys/net/core/somaxconn
 sudo echo 15000 61000 > /proc/sys/net/ipv4/ip_local_port_range
 
 
--Build:
+####-Build:
 Execute the file “build.sh”.
 
 
 
 
-License 
---------
+###License 
 
    Cstress Copyright 2013 Sergi Álvarez Triviño
 
