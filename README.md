@@ -44,11 +44,11 @@ Summary: Connection to a server set in localhost, listening to port 5008. Mode: 
 
 I know that a lot of things may be improved (this is basically a project born out of a need to do specifically this kind of testing to a server, as soon as possible.), but some of them are:
 
-1.Code clarity: For instance separating some common functions in subroutines (e.g. host connection)
+*1.Code clarity: For instance separating some common functions in subroutines (e.g. host connection)
 
-2.Time measurement performance: Improve the time measurement of the clients/server communication.
+*2.Time measurement performance: Improve the time measurement of the clients/server communication.
 
-3.Reliability when spawning more than 1000 connections (threads): It may be a system-dependent issue, but the reliability of the program certainly decreases after breaking the 1000 connections barrier.
+*3.Reliability when spawning more than 1000 connections (threads): It may be a system-dependent issue, but the reliability of the program certainly decreases after breaking the 1000 connections barrier.
 
 
 
@@ -56,13 +56,13 @@ I know that a lot of things may be improved (this is basically a project born ou
 
 ####-Possible requisites:
 
-ulimit -s 3500	            #decrease stack size
-ulimit -n 13000	#increase num of open files allowed
+ulimit -s 3500	 // decrease stack size
+ulimit -n 13000	// increase num of open files allowed
 
-#increase max connections allowed:
+// increase max connections allowed:
 echo 5000 > /proc/sys/net/core/somaxconn
 
-#change net.ipv4.ip_local_port_range :
+// change net.ipv4.ip_local_port_range :
 sudo echo 15000 61000 > /proc/sys/net/ipv4/ip_local_port_range
 
 
@@ -72,7 +72,7 @@ Execute the file “build.sh”.
 
 
 
-###License 
+##License 
 
    Cstress Copyright 2013 Sergi Álvarez Triviño
 
