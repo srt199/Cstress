@@ -88,7 +88,7 @@ Execute the file “build.sh”.
 
 ##·License 
 
-   Cstress Copyright 2013 Sergi Álvarez Triviño
+   Cstress Copyright 2013 Sergio Alvarez
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
