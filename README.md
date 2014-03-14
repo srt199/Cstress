@@ -2,7 +2,7 @@ Cstress – A stress testing tool for servers using TCP connections.
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 
-Written by: Sergi Álvarez Triviño (srt1199@gmail.com)
+Written by: Sergio Alvarez
 
 Cstress is a tool that allows to send data through n connections simultaneously in order to test how the destination server reacts.
 
